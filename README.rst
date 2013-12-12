@@ -1,8 +1,9 @@
-deploy-django-with-ansible
+Deploy Django with Ansible
 ==========================
 
-Ansible Playbooks and extensive documentation for deploying Django web 
-applications on a Linux, Nginx, PostgreSQL stack.
+This project contains Ansible Playbooks and extensive documentation for 
+easily deploying Django web applications on a Linux, Nginx, Green Unicorn, 
+and PostgreSQL stack.
 
 Background
 ----------
