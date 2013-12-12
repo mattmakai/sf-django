@@ -28,19 +28,19 @@ def bootstrap_ansible():
         'PasswordAuthentication no')
     sed('/etc/ssh/sshd_config', '^HostbasedAuthentication no',
         'HostbasedAuthentication yes')
-    create_privileged_group()
-    create_privileged_user()
-    upload_keys(env.new_user)
+    _create_privileged_group()
+    _create_privileged_user()
+    _upload_keys(env.new_user)
     run('service ssh reload')
 
-def create_privileged_group():
+def _create_privileged_group():
     run('/usr/sbin/groupadd ' + env.new_user_grp)
     run('mv /etc/sudoers /etc/sudoers-backup')
     run('(cat /etc/sudoers-backup ; echo "%' + env.new_user_grp + \
         ' ALL=(ALL) ALL") > /etc/sudoers')
     run('chmod 440 /etc/sudoers')
 
-def create_privileged_user():
+def _create_privileged_user():
     run('/usr/sbin/useradd -c "%s" -m -g %s %s' % \
         (env.new_user_full_name, env.new_user_grp, env.new_user))
     run('/usr/bin/passwd %s' % env.new_user)
@@ -51,7 +51,7 @@ def create_privileged_user():
     run('chgrp -R %s /home/%s/.ssh' % (env.new_user_grp, 
         env.new_user))
 
-def upload_keys(username):
+def _upload_keys(username):
     local('scp ' + env.ssh_key_dir + 'id_rsa ' + env.ssh_key_dir + \
         'id_rsa.pub ' + env.ssh_key_dir + 'authorized_keys2 ' + \
         username + '@' + env.host_string + ':~/.ssh')
