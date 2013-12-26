@@ -1,0 +1,9 @@
+[program:{{app_name}}]
+environment={% for k, v in django_env_vars.iteritems() %}{% if not loop.first %},{% endif %}{{ k }}="{{ v }}"{% endfor %}
+
+command={{virtualenv_dir}}/bin/gunicorn {{django_settings_dir_name}}.wsgi:application
+directory={{app_code_dir}}
+user={{deploy_user}}
+autostart=true
+autorestart=true
+redirect_stderr=True

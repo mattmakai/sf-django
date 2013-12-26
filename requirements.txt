@@ -1,2 +1,2 @@
 fabric==1.8.0
-ansible==1.4.1
+ansible==1.4.3

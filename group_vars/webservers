@@ -1,0 +1,5 @@
+---
+# variables listed here are applicable to web server group
+
+httpd_port: 80
+

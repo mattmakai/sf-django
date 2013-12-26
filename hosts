@@ -1,0 +1,5 @@
+[webservers]
+# add a web server IP addresses here, such as 127.0.0.1
+
+[dbservers]
+# add a database IP address here, such as 127.0.0.1

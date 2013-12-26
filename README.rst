@@ -1,9 +1,12 @@
 Deploy Django with Ansible
 ==========================
 
-This project contains Ansible Playbooks and extensive documentation for 
-easily deploying Django web applications on a Linux, Nginx, Green Unicorn, 
-and PostgreSQL stack.
+This project contains an example Ansible Playbook for deploying a Django
+project. You should probably use 
+`underwear <https://github.com/makaimc/underwear>`_ to deploy instead of
+these files. These files are intended as examples for the 
+`January 2014 San Fran Django meetup talk <http://www.meetup.com/The-San-Francisco-Django-Meetup-Group/events/151920512/>`_.
+ 
 
 Background
 ----------
@@ -11,7 +14,9 @@ I build a lot of Django apps and I wanted a way to easily deploy them to
 a traditional virtual private server stack instead of just defaulting to
 Heroku. I previously wrote extensive Fabric scripts to automate the 
 server configuration and deployment process, but that's really the wrong 
-tool for this goal.
+tool for this goal. Ansible is a much better way to solve the repeatable 
+deployment problem.
+
 
 First steps
 -----------
@@ -31,5 +36,6 @@ the top of the script, then run the script with::
 
 Right now the script will prompt you for the password the non-root user should
 be created with. I'll automate that manual step away later.
+
 
 
