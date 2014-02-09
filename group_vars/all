@@ -35,6 +35,9 @@ app_code_dir: /home/{{deploy_user}}/{{app_name}}
 # location of the requirements.txt flie in the code
 requirements_file: "{{app_code_dir}}/requirements.txt"
 
+# location of fixtures to load when configuring the web app
+fixtures_file: "{{app_code_dir}}/core/fixtures/prod.json"
+
 # local directory where public & private deployment ssh keys and
 # authorized_keys are located
 ssh_dir: /home/{{deploy_user}}/.ssh

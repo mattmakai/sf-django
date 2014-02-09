@@ -53,6 +53,5 @@
   django_manage: command=loaddata
                  app_path={{app_code_dir}}
                  virtualenv={{virtualenv_dir}}
-                 fixtures={{app_code_dir}}/core/fixtures/prod.json
+                 fixtures={{fixtures_file}}
   environment: django_env_vars
-
