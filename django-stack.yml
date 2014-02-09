@@ -3,7 +3,7 @@
 
 - name: apply common configuration to all nodes
   hosts: all
-  user: deployer
+  user: "{{ deploy_user }}"
   sudo: yes
 
   roles:
@@ -11,14 +11,14 @@
 
 - name: deploy postgresql and configure the databases
   hosts: dbservers
-  user: deployer
+  user: "{{ deploy_user }}"
 
   roles:
     - db
 
 - name: deploy nginx and configure web servers
   hosts: webservers
-  user: deployer
+  user: "{{ deploy_user }}"
 
   roles:
     - web
