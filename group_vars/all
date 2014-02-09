@@ -28,17 +28,20 @@ webserver_ip: 162.216.19.17
 # server directory for the virtualenv that will be created to run the web app
 virtualenv_dir: /home/{{deploy_user}}/venvs/{{app_name}}
 
-# server directory to put the code into that is pulled from the code 
+# server directory to put the code into that is pulled from the code
 # repository
 app_code_dir: /home/{{deploy_user}}/{{app_name}}
 
-# local directory where public & private deployment ssh keys and 
+# location of the requirements.txt flie in the code
+requirements_file: "{{app_code_dir}}/requirements.txt"
+
+# local directory where public & private deployment ssh keys and
 # authorized_keys are located
 ssh_dir: /home/{{deploy_user}}/.ssh
 
 # root domain name the server should run as. do not include a subdomain,
 # for example, txt2react.com
-root_domain_name: 
+root_domain_name:
 
 # for now, disable SSL (deploying with SSL works but need to update scripts
 # to use it)

@@ -19,7 +19,7 @@
   when: venv_dir.stat.isdir is not defined
 
 - name: install web application dependencies listed in requirements.txt
-  pip: requirements={{app_code_dir}}/requirements.txt
+  pip: requirements={{requirements_file}}
        virtualenv={{virtualenv_dir}}
 
 - name: check if app/static directory exists
