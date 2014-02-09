@@ -10,14 +10,18 @@
 app_name: django_app
 
 # Django project settings directory, which might be different than your
-# app name. for example, txt2react 
-django_settings_dir_name: 
+# app name. for example, txt2react
+django_settings_dir_name:
+
+# Django settings module to use when running Manage commands
+# for example, txt2react.settings
+django_settings:
 
 # remote git repository to pull application code from, for example:
 # ssh://git@github.com/makaimc/txt2react.git
-code_repository: 
+code_repository:
 
-# name of the user created by the Fabric script that Ansible will use to 
+# name of the user created by the Fabric script that Ansible will use to
 # handle server tasks
 deploy_user: deployer
 
@@ -58,4 +62,3 @@ django_env_vars: {
     STATIC_URL: '/static/',
     SECRET_KEY: '',
 }
-
