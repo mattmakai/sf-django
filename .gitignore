@@ -9,3 +9,5 @@ build
 _build
 fabfile.py
 set_envs.sh
+
+.vault_passphrase
