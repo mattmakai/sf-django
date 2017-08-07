@@ -37,5 +37,12 @@ the top of the script, then run the script with::
 Right now the script will prompt you for the password the non-root user should
 be created with. I'll automate that manual step away later.
 
+Ansible-Vault
+-------------
+The database password sits in an ansible-vault `group_vars/db_pass.vault`. Since the password for the vault is not shared, create your own vault. Steps to do this:
+ *  Make up a vault passphrase and put it into `./.vault_passphrase` (configured in ansible.cfg).
+ *  Hit `ansible-vault create group_vars/dp_pass.vault` or any other name for the file, it does not matter.
+ *  The file should contain only one variable pair: `db_password: CHANGE_ME`, with whatever password you choose (in yml).
 
+ Ansible decrypts the vault when you provision the playbook and has access to the variable in the playbooks. And, you can safely commit everything, since the .vault_passphrase is in .gitignore.
 
